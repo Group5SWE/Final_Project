@@ -29,27 +29,16 @@ input[type=reset]{
 <body>
 <div>
 <h1>Student Login</h1>
-<form>
-<label for="student_id:">Student id:</label>
-<INPUT style="width:100%; height:30px;" TYPE="text" SIZE="9" MAXLENGTH="9" minlength="9" name="student_id" id="student_id">
+<form METHOD="post" ACTION="./student_varify.php">
+<label for="Student ID:">Student id:</label>
+<INPUT style="width:100%; height:30px;" TYPE="text" SIZE="9" MAXLENGTH="9" minlength="9" NAME="student_id">
 <br><br>
-<label for="student_pw:">Password:</label>
+<label for="Student ID:">Password:</label>
 <INPUT style="width:100%; height:30px;" TYPE="password" SIZE="20" MAXLENGTH="20" NAME="student_pw">
 <br><br>
-<input type="submit" value="Login" onclick="checkLogin()">
+<input type="submit" value="Login">
 </form>
 </div>
-<script>
-	function checkLogin(){
-		var studentId = document.getElementById("student_id").value;
-		if(studentId.length == 0){
-			prompt("Error: Must Enter Username");
-		}
-		else{
-			alert(studentId);
-		}
-		
-	}
-</script>
+
 </body>
 </html>
