@@ -1,0 +1,31 @@
+<html>
+<head>
+<title>Page Title</title>
+<style>
+a:link, a:visited {
+  background-color: #f44336;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: lightblue;
+}
+</style>
+</head>
+<body>
+<h1>Welcome to Attend In</h1>
+	<form action= "./student_homepage.php" method = "post">
+	<input type="hidden" name="userid" value="0">
+	<input type="submit" value="Student Login">
+	</form>
+<br><br>
+	<form action= "./instructor_login.php" method = "post">
+	<input type="hidden" name="userid" value="0">
+	<input type="submit" value="Instructor Login">
+	</form>
+</body>
+</html>
