@@ -32,6 +32,26 @@ a:hover, a:active {
 	echo '<input type="hidden" name="userid" value=' . $userid . '>';
 	echo '<input type="submit" value="Sign in attendance">';
 	echo "</form>";
+	$host = 'localhost'; // or your host name
+	$dbname = 'attendance_project_database'; // your database name
+	$username = 'root'; // your database username
+	$password = 'Chelseas#10'; // your database password
+	$con = new mysqli($host,$username,$password,$dbname);
+	$attend = "SELECT if_attended FROM attendance WHERE student_id='$userid'";
+	$result = $con->query($attend);
+	$counter = 0;
+	while ($row = mysqli_fetch_array($result)) {
+		if ($row["if_attended"]==0) {
+			$counter++;
+		}
+	}
+	if ($counter == 3) {
+		echo "<div id='warning'> WARNING! ATTEND CLASS OR ELSE!!!</div>";	
+	}
+	if ($counter > 3){
+		echo "<div id='cooked'>YOU'RE COOKED!!! GGs!!!!!</div><br><br>";
+		echo"<img src='cooked.png'>";
+	}
 ?>
 </body>
 </html>

@@ -40,7 +40,6 @@ if(mysqli_connect_errno()){
 
 	$userid = $_POST["instructor_id"];
 	$userpw = $_POST["instructor_pw"];
-	echo $userid;
 	$instructor = "SELECT instructor_id, password FROM `instructor` WHERE instructor_id='$userid';";
 	$result = $con->query($instructor);
 	
@@ -55,7 +54,7 @@ if($result->num_rows>0 && $result->num_rows<2 ){
 			echo '<input type="hidden" name="userid" value=' . $userid . '>';
 			echo '<input type="submit" value="goto homepage">';
 			echo "</form>";	
-			delete('form');
+			echo "<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>";
 		}
 		else{
 			echo "<h1>Error!</h1>";

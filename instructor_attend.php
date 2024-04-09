@@ -15,10 +15,11 @@ if(mysqli_connect_errno()){
 }
 $instructor_id=$_POST["userid"];
 
-$course = "SELECT course_number FROM `courses` WHERE instructor_id='$instructor_id'";
+$course = "SELECT DISTINCT course_number FROM `courses` WHERE instructor_id='$instructor_id'";
 $result1 = $con->query($course);
 if($result1->num_rows>0){
 	while($row = $result1->fetch_assoc()){
+		
         $course_id = $row["course_number"];
 		$allattend = "SELECT * FROM `attendance` WHERE course_number='$course_id'";
         $result2 = $con->query($allattend);
@@ -31,10 +32,7 @@ if($result1->num_rows>0){
                 }
 		    }
     
-	    }else{
-            echo "<h1>Error!</h1>";
-            echo "no user found";
-        }
+	    }
 	}
 
 		echo "<br><br>";
@@ -47,6 +45,32 @@ if($result1->num_rows>0){
 else{
 	echo "<h1>Error!</h1>";
 	echo "no user found";
+}
+echo"Students Who have too many absenses:";
+$student = "SELECT DISTINCT student_id FROM `courses` WHERE instructor_id='$instructor_id'";
+$result3 = $con->query($student);
+$counter1 = 0;
+if($result3->num_rows>0){
+	while($row = $result3->fetch_assoc()){
+	
+		$counter2=0;
+		$student_id = $row["student_id"];
+		$attend = "SELECT if_attended FROM `attendance` WHERE student_id='$student_id'";
+		$result4 = $con->query($attend);
+		if($result4->num_rows> 0){
+			while($row = $result4->fetch_assoc()){
+				$counter2++;
+				if ($counter2 > 3){
+					echo '<br>'.$student_id;
+					$counter1++;
+				}
+			}
+		}
+
+	} 
+}
+if ($counter1 == 0){
+	echo 'None :)';
 }
 ?>
 

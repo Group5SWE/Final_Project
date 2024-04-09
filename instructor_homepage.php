@@ -26,7 +26,7 @@ a:hover, a:active {
 	echo '<input type="submit" value="View your Attendance">';
 	echo "</form>";
 	
-	echo '<form action= "./instructor_create.php" method = "post">';
+	echo '<form action= "./instructor_loc.php" method = "post">';
 	echo '<input type="hidden" name="userid" value=' . $userid . '>';
 	echo '<input type="submit" value="create new class attendance">';
 	echo "</form>";

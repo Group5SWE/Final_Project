@@ -41,21 +41,20 @@ if(mysqli_connect_errno()){
 	
 	$userid = $_POST["student_id"];
 	$userpw = $_POST["student_pw"];
-	echo $userid;
 	$student = "SELECT student_id, password FROM `student` WHERE student_id='$userid';";
 	$result = $con->query($student);
 if($userid=="0"){
 	echo "<h1>welcome!</h1>";
 }else{
-if($result->num_rows>0 && $result->num_rows<2 ){
+if($result->num_rows>0){
 	while($row = $result->fetch_assoc()){
 		if ($row['password'] == $userpw && $row['student_id'] == $userid){
 			echo "<h1>Login successful!</h1>";
 			echo '<form action= "./student_homepage.php" method = "post">';
 			echo '<input type="hidden" name="userid" value=' . $userid . '>';
 			echo '<input type="submit" value="goto homepage">';
-			echo "</form>";	
-			delete('form');
+			echo "</form>";
+			echo "<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>";
 		}
 		else{
 			echo "<h1>Error!</h1>";

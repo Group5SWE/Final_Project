@@ -3,9 +3,8 @@
 <title>Page Title</title>
 </head>
 <body>
-<button onclick="getLocation()">click to get current longitude and latitude</button>
 
-<p id="demo"></p>
+
 
 <?php
 $host = 'localhost'; // or your host name
@@ -13,24 +12,35 @@ $dbname = 'attendance_project_database'; // your database name
 $username = 'root'; // your database username
 $password = 'Chelseas#10'; // your database password
 $con = new mysqli($host,$username,$password,$dbname);
+$lati = $_POST['lati'];
+$long = $_POST['long'];
 	$userid = $_POST["userid"];
-	$date = date("m/d/Y");
+	date_default_timezone_set("US/Eastern");
+	$date = date("Y-m-d");
 	$course = "SELECT course_number FROM `courses` WHERE instructor_id='$userid';";
 	$result = $con->query($course);
-	echo "Class CRN:";
-	echo '<form action= "./instructor_qr.php" method = "post" required>';
-
-		echo '<label for="long">classroom longitude:</label>';
-		echo '<input type="text" name="long" required>';
-		echo '<br><label for="land">classroom latitude:</label>';
-		echo '<input type="text" name="lati" required>';
+	$counter = 0;
+	$current_crn = '';
+	
 	while($row = $result->fetch_assoc()){
-		echo '<input type="hidden" name="userid" value=' . $userid . 'required>';
-		echo '<input type="hidden" name="crn" value=' . $row['course_number'] . 'required>';
-		echo '<br><input type="submit" value=' . $row['course_number'] . '>';
-		echo "</form>";
+		$counter++;
+		if ($row['course_number'] != $current_crn){
+		echo '<form action= "./instructor_qr.php" method = "post">';
+		
+		echo '<input type="hidden" id = "lati" value = "'.$lati.'"maxlength = "7" name="lati">';
+		echo '<input type="hidden" id = "long" name="long" value = "'.$long.'" maxlength = "7" >';
+		echo '<input type="hidden" name="date" value=' . $date . '>';
+		echo '<input type="hidden" name="userid" value=' . $userid . '>';
+		//echo '<input type="text" name="crn" value=' . $row['course_number'].'>';
+			echo 'Class CRN: <input type="submit" name = "crn" value=' . $row['course_number'] . '><br>';
+			$current_crn = $row['course_number'];
+		}
+			
+		
 	}
-	echo "Attendance date:" . $date;
+	echo '<div id = "row_number" value = "'.$counter.'">';
+	echo "</form>";
+	echo "<br>Attendance date:" . $date;
 ?>
 
 <script>
@@ -42,12 +52,26 @@ function getLocation() {
   } else { 
     x.innerHTML = "Geolocation is not supported by this browser.";
   }
+  return false
 }
 
 function showPosition(position) {
   x.innerHTML = "Latitude: " + position.coords.latitude + 
-  "<br>Longitude: " + position.coords.longitude;
+  "<br>Longitude: " + position.coords.longitude ;
+  var input1 = document.getElementById('lati');
+	var input2 = document.getElementById('long');
+	input1.value = position.coords.latitude.toString().substring(0,8);
+	input2.value = position.coords.longitude.toString().substring(0,9);
+	/*var input3 = document.getElementById('lati').value
+	var input4 = document.getElementById('long').value;
+	var input5 = document.getElementById('row_number').value;
+	for(let i=0,i < input5,i++){
+
+	}*/
+
 }
+
+
 </script>
 
 </body>
