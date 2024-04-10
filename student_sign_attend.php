@@ -1,8 +1,10 @@
 <html>
 <head>
 <title>Page Title</title>
+<link rel="stylesheet" href="student_sign_attend.css">
 </head>
 <body>
+<img src="submit2.gif" alt="GIF" class="side-gif">
 <button onclick="getLocation()">click to get current longitude and latitude</button>
 <p id="demo"></p>
 <?php

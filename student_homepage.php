@@ -1,37 +1,30 @@
+<!DOCTYPE html>
 <html>
 <head>
-<title>Student Portal</title>
-<style>
-a:link, a:visited {
-  background-color: #f44336;
-  color: white;
-  padding: 14px 25px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-}
-
-a:hover, a:active {
-  background-color: lightblue;
-}
-</style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Title</title>
+    <link rel="stylesheet" href="student_homepage.css">
 </head>
 <body>
-<h1>Welcome to student portal</h1>
+<img src="edu.gif" alt="GIF" class="side-gif">
+<div class="container">
+      
+    <div class="content">
+<h1>Welcome to Student Portal</h1>
 <br><br>
 <?php
   $userid = $_POST["userid"];
   
-	echo "welcome" . $userid;
-	echo '<form action= "./student_attend.php" method = "post">';
-	echo '<input type="hidden" name="userid" value=' . $userid . '>';
-	echo '<input type="submit" value="View your Attendance">';
-	echo "</form>";
-	
-	echo '<form action= "./student_sign_attend.php" method = "post">';
-	echo '<input type="hidden" name="userid" value=' . $userid . '>';
-	echo '<input type="submit" value="Sign in attendance">';
-	echo "</form>";
+  echo "" . $userid;
+  echo '<form action="./student_attend.php" method="post">';
+  echo '<input type="hidden" name="userid" value="' . $userid . '">';
+  echo '<input type="submit" value="View your Attendance" class="attendance-button">';
+  echo "</form>";
+  
+  echo '<form action="./student_sign_attend.php" method="post">';
+  echo '<input type="hidden" name="userid" value="' . $userid . '">';
+  echo '<input type="submit" value="Sign in attendance" class="attendance-button">';
+  echo "</form>";
 	$host = 'localhost'; // or your host name
 	$dbname = 'attendance_project_database'; // your database name
 	$username = 'root'; // your database username
