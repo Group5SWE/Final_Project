@@ -19,25 +19,25 @@
     text-align: center;
 }
 .content h1 {
-    font-size: 60px; 
+    font-size: 60px; /* Adjust the font size as needed */
     color: #fff;
     font-weight: 500;
 }
-.content a{
+.content input[type="submit"] {
     text-decoration: none;
-    display:grid;
-    color: #1413135d;
+    display: inline-block;
+    color: #fff;
     font-size: 24px;
-    border: 2px solid #050505;
+    border: 2px solid #fff;
     padding: 14px 70px;
-    border-radius: 0;
+    border-radius: 50px;
     margin-top: 20px;
     transition: 0.3s;
-    background-color: #050505;
-    
+    cursor: pointer;
+    background: transparent;
 }
-.content a:hover{
-    background-color: #0d0c0c;
+.content input[type="submit"]:hover {
+    background-color: #fff;
     color: black;
 }
 .back-video{
@@ -68,27 +68,22 @@
 .side-gif {
     position:fixed;
     top: 40%;
-    right: 25%; 
+    right: 25%; /* Adjust the right position as needed */
     transform: translateY(-40%);
     z-index: -1;
-    width: 50%; 
-    opacity: 0.7;
-}
-.attendance-button {
-    background-color: #101110; 
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 8px; 
+    width: 50%; /* Adjust the width as needed */
 }
 
-.attendance-button:hover {
-    background-color: #9688bd9e; 
+#cooked{
+color:red;
+font-size: 40px;
 }
-
+#homepage{
+    border: 3px rgb(0, 0, 0);
+    height:40px;
+    width:300px;
+    position:fixed; left:10px; top:20px;
+    background-color: rgb(96, 245, 123);
+    font-size: large;
+    font-weight: bold;
+}

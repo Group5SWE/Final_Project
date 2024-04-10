@@ -1,10 +1,13 @@
 <html>
 <head>
 <title>Page Title</title>
-<link rel="stylesheet" href="student_sign_attend.css">
+<link rel="stylesheet" href="styleIL.css">
 </head>
 <body>
-<img src="submit2.gif" alt="GIF" class="side-gif">
+<div class="container">
+        <video autoplay loop muted plays-inline class="back-video">
+            <source src="videoIL.mp4" type="video/mp4"> 
+        </video>
 <button onclick="getLocation()">click to get current longitude and latitude</button>
 <p id="demo"></p>
 <?php
@@ -28,7 +31,7 @@ echo '<label for="lati">latitude:</label>';
         echo '<input type="hidden" name="userid" value=' . $userid . '>';
         echo '<br><input type="submit" value= "Submit">';
         echo "</form>";
-        echo"<form action ='./student_sign_attend.php' method = 'post'>";
+        echo"<form action ='./student_homepage.php' method = 'post'>";
         echo'<input type="hidden" name="userid" value=' . $userid . '>';
         echo '<input type="submit" value="Go to Homepage">';
 ?>
@@ -44,8 +47,6 @@ function getLocation() {
 }
 
 function showPosition(position) {
-  x.innerHTML = "Latitude: " + position.coords.latitude + 
-  "<br>Longitude: " + position.coords.longitude ;
   var input1 = document.getElementById('lati');
 	var input2 = document.getElementById('long');
 	input1.value = position.coords.latitude.toString().substring(0,8);

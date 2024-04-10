@@ -14,8 +14,6 @@
 <br><br>
 <?php
   $userid = $_POST["userid"];
-  
-  echo "" . $userid;
   echo '<form action="./student_attend.php" method="post">';
   echo '<input type="hidden" name="userid" value="' . $userid . '">';
   echo '<input type="submit" value="View your Attendance" class="attendance-button">';
@@ -42,9 +40,12 @@
 		echo "<div id='warning'> WARNING! ATTEND CLASS OR ELSE!!!</div>";	
 	}
 	if ($counter > 3){
-		echo "<div id='cooked'>YOU'RE COOKED!!! GGs!!!!!</div><br><br>";
-		echo"<img src='cooked.png'>";
+		echo "<div id='cooked'>TOO MANY ABSENCES!!!!!</div><br><br>";
+		echo"<img src='cooked.png' width='500' height='333' align='center'>";
 	}
 ?>
+<form action = "homepage.html">
+<input type="submit" value="Sign Out" id="homepage">
+      </form>
 </body>
 </html>

@@ -1,0 +1,52 @@
+html{
+    background-color:#D6EAF8;
+}
+.banner{
+    background-color: rgb(140, 182, 237);
+    padding: 10px;
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    width: 100%
+}
+
+table{
+    border:ridge 5px red;
+}
+table th,td{
+    border:inset 1px #000;
+    text-align: center;
+    font-size: large;
+}
+table{
+    width:100%
+}
+#title_text{
+    font-size: 25px;
+}
+#homepage{
+    border: 3px rgb(0, 0, 0);
+    height:40px;
+    width:300px;
+    position:fixed; left:10px; top:20px;
+    background-color: rgb(96, 245, 123);
+    font-size: large;
+    font-weight: bold;
+}
+.content input[type="submit"] {
+    text-decoration: none;
+    display: inline-block;
+    color: #fff;
+    font-size: 24px;
+    border: 2px solid #fff;
+    padding: 14px 70px;
+    border-radius: 50px;
+    margin-top: 20px;
+    transition: 0.3s;
+    cursor: pointer;
+    background: transparent;
+}
+.content input[type="submit"]:hover {
+    background-color: #fff;
+    color: black;
+}

@@ -1,11 +1,15 @@
 <html>
 <head>
 <title>Page Title</title>
+<link rel="stylesheet" href="instructor_create.css">
 </head>
 <body>
 
 
-
+<div class="container">
+<video autoplay loop muted plays-inline class="back-video">
+            <source src="instructor_create.mp4" type="video/mp4"> 
+        </video>
 <?php
 $host = 'localhost'; // or your host name
 $dbname = 'attendance_project_database'; // your database name
@@ -43,37 +47,7 @@ $long = $_POST['long'];
 	echo "<br>Attendance date:" . $date;
 ?>
 
-<script>
-const x = document.getElementById("demo");
-
-function getLocation() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showPosition);
-  } else { 
-    x.innerHTML = "Geolocation is not supported by this browser.";
-  }
-  return false
-}
-
-function showPosition(position) {
-  x.innerHTML = "Latitude: " + position.coords.latitude + 
-  "<br>Longitude: " + position.coords.longitude ;
-  var input1 = document.getElementById('lati');
-	var input2 = document.getElementById('long');
-	input1.value = position.coords.latitude.toString().substring(0,8);
-	input2.value = position.coords.longitude.toString().substring(0,9);
-	/*var input3 = document.getElementById('lati').value
-	var input4 = document.getElementById('long').value;
-	var input5 = document.getElementById('row_number').value;
-	for(let i=0,i < input5,i++){
-
-	}*/
-
-}
-
-
-</script>
-
+</div>
 </body>
 </html>
 

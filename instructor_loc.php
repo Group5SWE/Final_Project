@@ -1,8 +1,13 @@
 <html>
 <head>
 <title>Page Title</title>
+<link rel="stylesheet" href="styleIL.css">
 </head>
 <body>
+<div class="container">
+        <video autoplay loop muted plays-inline class="back-video">
+            <source src="videoIL.mp4" type="video/mp4"> 
+        </video>
 <button onclick="getLocation()">click to get current longitude and latitude</button>
 <p id="demo"></p>
 <?php
@@ -29,11 +34,10 @@ function getLocation() {
 }
 
 function showPosition(position) {
-  x.innerHTML = "Latitude: " + position.coords.latitude + 
-  "<br>Longitude: " + position.coords.longitude ;
   var input1 = document.getElementById('lati');
 	var input2 = document.getElementById('long');
 	input1.value = position.coords.latitude.toString().substring(0,8);
 	input2.value = position.coords.longitude.toString().substring(0,9);
 }
 </script>
+</div>

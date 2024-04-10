@@ -1,7 +1,13 @@
 <html>
 <head>
 <title>Page Title</title>
+<link rel="stylesheet" href="attend_pass.css">
 </head>
+<div class="container">
+<video autoplay loop muted plays-inline class="back-video">
+            <source src="attend_pass.mp4" type="video/mp4"> 
+        </video>
+<div class="content">
 <body>
 <?php
 $host = 'localhost'; // or your host name
@@ -50,5 +56,8 @@ if ($result->num_rows == 0){
 }
 echo"<form action ='./student_homepage.php' method = 'post'>";
 echo'<input type="hidden" name="userid" value=' . $userid . '>';
-echo '<input type="submit" value="Go to Homepage">';
+echo '<input type="submit" value="Go to Homepage" id = "homepage">';
 ?>
+</div>
+</div>
+<input type="submit" value="Sign Out">

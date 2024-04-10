@@ -1,8 +1,10 @@
 <html>
 <head>
 <title>Page Title</title>
+<link rel="stylesheet" href="instructor_qr.css">
 </head>
 <body>
+<div class = "container">
 
 <?php
 	$userid = $_POST["userid"];
@@ -27,7 +29,7 @@ if(mysqli_connect_errno()){
 }
 if($lati == ""){
     echo "<div id='fail'>No location Entered</div>";
-    echo"<form action ='./instructor_create.php' method = 'post'>";
+    echo"<form action ='./instructor_loc.php' method = 'post'>";
     echo'<input type="hidden" name="userid" value=' . $userid . '>';
     echo '<input type="submit" value="Try again">';
 }else{
@@ -46,9 +48,9 @@ while($row = $result->fetch_assoc()){
 }
 echo"<form action ='./instructor_homepage.php' method = 'post'>";
 echo'<input type="hidden" name="userid" value=' . $userid . '>';
-echo '<input type="submit" value="Go to Homepage">';
+echo '<input type="submit" value="Go to Homepage" id="homepage">';
 ?>
 
-
+</div>
 </body>
 </html>
