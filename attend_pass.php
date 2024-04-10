@@ -1,8 +1,10 @@
 <html>
 <head>
 <title>Page Title</title>
+<link rel="stylesheet" href="attend_pass.css">
 </head>
 <body>
+
 <?php
 $host = 'localhost'; // or your host name
 $dbname = 'attendance_project_database'; // your database name
@@ -16,7 +18,7 @@ $studentLong = $_POST["long"];
 date_default_timezone_set("US/Eastern");
 $date = date("Y-m-d");
 if($studentLati == ""){
-    echo "<div id='fail2'>No location entered</div>";
+    echo "<div id='fail2'>No Location Entered ⚠️</div>";
     echo"<form action ='./student_sign_attend.php' method = 'post'>";
     echo'<input type="hidden" name="userid" value=' . $userid . '>';
     echo '<input type="submit" value="Try again">';
