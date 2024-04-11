@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
 <title>Student Login</title>
@@ -21,7 +22,6 @@
         }
     </style>
 <link rel="stylesheet" href="login.css">
-
 </head>
 <body>
 <div class="container">
@@ -39,51 +39,54 @@ if(mysqli_connect_errno()){
     echo "Failed to connect!";
     exit();
 }
-	
-	
-	$userid = $_POST["student_id"];
-	$userpw = $_POST["student_pw"];
-	$student = "SELECT student_id, password FROM `student` WHERE student_id='$userid';";
+	$student = "SELECT student_id, password FROM `student`;";
 	$result = $con->query($student);
-if($userid=="0"){
-	
 	echo "<h1>Welcome!</h1>";
-}else{
+	echo '<form id = "form" METHOD="post" ACTION="student_homepage.php" onsubmit="return checkLogin(this)">';
 if($result->num_rows>0){
 	while($row = $result->fetch_assoc()){
-		if ($row['password'] == $userpw && $row['student_id'] == $userid){
-			echo "<h1>Login successful!</h1>";
-			echo '<form action= "./student_homepage.php" method = "post">';
-			echo '<input type="hidden" name="userid" value=' . $userid . '>';
-			echo '<input type="submit" value="goto homepage">';
-			echo "</form>";
-	
-		}
-		else{
-			echo "<div id='error'>Error!</h1>";
-			echo "<h1>wrong password</div>";
-		}
-	}
-}
-else{
-	echo "<div id='error'>Error!";
-	echo "<br>no user found</div>";
-}
+		echo '<input type="hidden" id = "'.$row["student_id"].'"value="'.$row["password"].'">';
+    }
 }
 ?>
 
-<div id="form">
+
 <h1>Student Login</h1>
-<form METHOD="post" ACTION="student_login.php">
-<label for="student_id" id="title_box">Student id:</label>
-<INPUT style="width:100%; height:30px; text-align: left;" TYPE="text" SIZE="9" MAXLENGTH="9" minlength="9" NAME="student_id">
+
+<label for="student_id">Student id:</label>
+<INPUT required style=" width:100%; height:30px;" TYPE="text" SIZE="9" MAXLENGTH="9" minlength="9" NAME="userid" id="userid">
 <br><br>
-<label for="student_pw" id="title_box">Password:</label>
-<INPUT style="width:100%; height:30px; text-align: left;" TYPE="password" SIZE="20" MAXLENGTH="20" NAME="student_pw">
+<label for="student_pw">Password:</label>
+<INPUT required style="width:100%; height:30px;" TYPE="password" SIZE="20" MAXLENGTH="20" NAME="student_pw" id="student_pw">
 <br><br>
 <input type="submit" value="Login">
+<div id="error"></div>
 </form>
 </div>
 </div>
+<script  type="text/javascript">
+        function print(elemId, hintMsg){
+		document.getElementById(elemId).innerHTML = hintMsg;
+	}
+    function checkLogin(form){
+	try {
+		var student_id_num = form.userid.value;
+	var correctPassword = document.getElementById(student_id_num).value;
+    var passwordCheck = form.student_pw.value;
+   /* if (correctPassword.length == 0){
+        print("error","Error: Incorrect student_id or password");
+			return false;
+    }*/
+    if(passwordCheck != correctPassword){
+		print("error","Incorrect Password: Please Try again");
+			return false;
+    }
+	} catch (error) {
+		print("error","Error: No Student ID Found");
+		return false;
+	}
+
+}
+</script>
 </body>
 </html>

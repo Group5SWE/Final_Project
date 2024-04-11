@@ -43,10 +43,10 @@
 	echo '<input type="submit" value="create new class attendance">';
 	echo "</form>";
 ?>
-<form action = "homepage.html">
+
+  </div>
+  <form action = "homepage.html">
 <input type="submit" value="Sign Out" id="homepage">
       </form>
-  </div>
-
 </body>
 </html>
