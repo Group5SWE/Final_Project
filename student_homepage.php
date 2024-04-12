@@ -37,7 +37,7 @@
 		}
 	}
 	if ($counter == 3) {
-		echo "<div id='warning'> WARNING! ATTEND CLASS OR ELSE!!!</div>";	
+		echo "<div id='cooked'> WARNING! ATTEND CLASS OR ELSE!!!</div>";	
 	}
 	if ($counter > 3){
 		echo "<div id='cooked'>TOO MANY ABSENCES!!!!!</div><br><br>";

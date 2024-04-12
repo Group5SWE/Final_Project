@@ -20,14 +20,29 @@
             background-color: #fff;
             color: black;
         }
+        <style>
+    body, html {
+        height: 100%;
+      }
+      
+      .bg {
+        /* The image used */
+        background-image: url("instructor-attend.gif");
+      
+        /* Full height */
+        height: 100%;
+      
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      </style>
     </style>
 <link rel="stylesheet" href="styleIH.css">
 </head>
 <body>
+<div class ="bg">
 <div class="container">
-        <video autoplay loop muted plays-inline class="back-video">
-            <source src="videoIH.mp4" type="video/mp4"> 
-        </video>
   <div class="content">
 <h1>Welcome to instructor portal</h1>
 <br><br>
@@ -43,10 +58,11 @@
 	echo '<input type="submit" value="create new class attendance">';
 	echo "</form>";
 ?>
-<form action = "homepage.html">
+
+  </div>
+    </div>
+  <form action = "homepage.html">
 <input type="submit" value="Sign Out" id="homepage">
       </form>
-  </div>
-
 </body>
 </html>

@@ -1,9 +1,9 @@
-body, html {
+body, html{
     height: 100%;
     margin: 0;
     font-family: Arial, sans-serif;
   }
-  
+
   .container {
     position: relative;
     height: 100vh;
@@ -12,10 +12,11 @@ body, html {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+  
   }
   
 
-  .back-video {
+  /*img{
     position: absolute;
     right: 0;
     bottom: 0;
@@ -25,7 +26,7 @@ body, html {
     height: auto;
     z-index: -100;
     background-size: cover;
-  }
+  }*/
   
   button {
     padding: 10px 20px;
@@ -80,15 +81,15 @@ body, html {
     margin-top: 20px;
   }
   
-@media (max-aspect-ratio: 16/9) {
-     .back-video{
+/*@media (max-aspect-ratio: 16/9) {
+     img{
       width: auto;
       height: 100%;
     }
 } 
 @media (min-aspect-ratio: 16/9) {
-    .back-video{
+    img{
       width: 100%;
       height: auto;
     }
-}
+}*/

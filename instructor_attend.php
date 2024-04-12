@@ -3,7 +3,7 @@
 <title>Page Title</title>
 <link rel="stylesheet" href="student_attend.css">
 </head>
-
+<div class="bg">
 <div class="banner">
 	<h1>ATTENDANCE</h1>
 </div>
@@ -42,7 +42,7 @@ if($result1->num_rows>0){
 					echo"<td>".$row["course_number"]."</td>" ;
 					echo "<td>".$row["student_id"]."</td>";
 					echo"<td>".$row['date']."</td>";
-					echo"<td bgcolor = 'green'> Yes </td>";
+					echo"<td bgcolor = '#2ECC71'> Yes </td>";
 					echo"</tr>";
 		        }else{
 					echo"<tr>";
@@ -93,9 +93,11 @@ if($result3->num_rows>0){
 						echo"<th>Student ID</th>";
 						echo"</tr>";
 					}
+					if($counter2==3){
 					echo"<tr>";
 					echo"<td>".$student_id."</td>";
 					echo"</tr>";
+					}
 				}
 			}
 		}

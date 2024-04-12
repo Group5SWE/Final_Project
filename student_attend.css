@@ -33,20 +33,3 @@ table{
     font-size: large;
     font-weight: bold;
 }
-.content input[type="submit"] {
-    text-decoration: none;
-    display: inline-block;
-    color: #fff;
-    font-size: 24px;
-    border: 2px solid #fff;
-    padding: 14px 70px;
-    border-radius: 50px;
-    margin-top: 20px;
-    transition: 0.3s;
-    cursor: pointer;
-    background: transparent;
-}
-.content input[type="submit"]:hover {
-    background-color: #fff;
-    color: black;
-}

@@ -2,11 +2,27 @@
 <head>
 <title>Page Title</title>
 <link rel="stylesheet" href="attend_pass.css">
+<style>
+    body, html {
+        height: 100%;
+      }
+      
+      .bg {
+        /* The image used */
+        background-image: url("submit2.gif");
+      
+        /* Full height */
+        height: 100%;
+      
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      </style>
 </head>
+<div class='bg'>
 <div class="container">
-<video autoplay loop muted plays-inline class="back-video">
-            <source src="attend_pass.mp4" type="video/mp4"> 
-        </video>
 <div class="content">
 <body>
 <?php
@@ -60,4 +76,4 @@ echo '<input type="submit" value="Go to Homepage" id = "homepage">';
 ?>
 </div>
 </div>
-<input type="submit" value="Sign Out">
+</div>

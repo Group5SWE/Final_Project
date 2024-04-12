@@ -2,14 +2,29 @@
 <head>
 <title>Page Title</title>
 <link rel="stylesheet" href="instructor_create.css">
+<style>
+body, html {
+  height: 100%;
+}
+
+.bg {
+  /* The image used */
+  background-image: url("satellite.jpg");
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+</style>
 </head>
 <body>
 
-
+<div class ="bg">
 <div class="container">
-<video autoplay loop muted plays-inline class="back-video">
-            <source src="instructor_create.mp4" type="video/mp4"> 
-        </video>
 <?php
 $host = 'localhost'; // or your host name
 $dbname = 'attendance_project_database'; // your database name
