@@ -93,7 +93,7 @@ if($result3->num_rows>0){
 						echo"<th>Student ID</th>";
 						echo"</tr>";
 					}
-					if($counter2==3){
+					if($counter1==3){
 					echo"<tr>";
 					echo"<td>".$student_id."</td>";
 					echo"</tr>";
